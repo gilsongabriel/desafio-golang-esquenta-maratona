@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+    - 8087:8087
+    networks:
+      - app-network
+    restart: always
+    tty: true
+
+networks:
+  app-network:
+    driver: bridge
+    name: app-network
